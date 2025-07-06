@@ -1,0 +1,26 @@
+---
+// src/pages/events/index.astro
+import EventCard from "../../components/EventCard.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { setCache } from "../../utils/cache";
+import { getEvents } from "../../utils/events";
+
+const events = await getEvents();
+setCache.short(Astro);
+---
+
+<BaseLayout title="Upcoming Events">
+  <div class="container pt-6">
+    <h1 class="text-4xl font-bold mb-8">Upcoming Events</h1>
+
+    {events.length === 0 ? (
+      <p class="text-lg text-gray-600">No events found at this time. Please check back later!</p>
+    ) : (
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {events.map((event) => (
+          <EventCard event={event} />
+        ))}
+      </div>
+    )}
+  </div>
+</BaseLayout>

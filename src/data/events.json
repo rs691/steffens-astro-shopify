@@ -1,0 +1,36 @@
+
+[
+  {
+    "slug": "summer-music-festival",
+    "title": "Summer Music Festival",
+    "date": "2025-08-15T18:00:00",
+    "locationName": "Riverside Park Amphitheater",
+    "address": "123 Park Ave, Anytown, USA",
+    "description": "Join us for a weekend of live music, food trucks, and good vibes!",
+    "imageUrl": "/images/music-festival.jpg",
+    "latitude": 41.2586,
+    "longitude": -95.8580
+  },
+  {
+    "slug": "community-food-drive",
+    "title": "Community Food Drive",
+    "date": "2025-09-01T10:00:00",
+    "locationName": "Town Hall Square",
+    "address": "456 Main St, Anytown, USA",
+    "description": "Help us collect non-perishable food items for those in need.",
+    "imageUrl": "/images/food-drive.jpg",
+    "latitude": 41.2600,
+    "longitude": -95.8650
+  },
+  {
+    "slug": "local-art-exhibition",
+    "title": "Local Art Exhibition",
+    "date": "2025-09-20T14:00:00",
+    "locationName": "Gallery One",
+    "address": "789 Art St, Anytown, USA",
+    "description": "Discover incredible local talent at this year's art exhibition.",
+    "imageUrl": "/images/art-exhibition.jpg",
+    "latitude": 41.2500,
+    "longitude": -95.8600
+  }
+]

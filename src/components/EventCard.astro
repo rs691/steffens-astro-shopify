@@ -1,0 +1,46 @@
+---
+// src/components/EventCard.astro
+import type { Event } from "../utils/events";
+
+interface Props {
+  event: Event;
+}
+
+const { event } = Astro.props;
+
+const eventDate = new Date(event.date).toLocaleDateString("en-US", {
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+const eventTime = new Date(event.date).toLocaleTimeString("en-US", {
+  hour: "2-digit",
+  minute: "2-digit",
+});
+---
+
+<a href={`/events/${event.slug}`} class="block border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 ease-in-out group">
+  {event.imageUrl && (
+    <img
+      src={event.imageUrl}
+      alt={event.title}
+      class="w-full h-48 object-cover rounded-t-lg"
+    />
+  )}
+  <div class="p-4">
+    <h3 class="text-xl font-semibold text-gray-900 group-hover:text-primary transition-colors duration-200 ease-in-out">
+      {event.title}
+    </h3>
+    <p class="text-gray-600 mt-2">
+      <span class="font-medium">{eventDate}</span> at {eventTime}
+    </p>
+    <p class="text-gray-700 mt-1">{event.locationName}</p>
+    <p class="text-sm text-gray-500 mt-2 line-clamp-2">
+      {event.description}
+    </p>
+    <span class="mt-4 inline-block text-primary-600 hover:text-primary-700 font-medium text-sm">
+      View Details &rarr;
+    </span>
+  </div>
+</a>

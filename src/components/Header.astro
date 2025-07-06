@@ -1,6 +1,6 @@
 ---
+import CartIcon from "../components/CartIcon.svelte"; // Assuming CartIcon is a Svelte component
 import Logo from "./Logo.astro";
-import CartIcon from "./CartIcon.svelte";
 ---
 
 <header class="sticky top-0 z-40">
@@ -10,12 +10,11 @@ import CartIcon from "./CartIcon.svelte";
         <span class="sr-only">Logo</span>
         <Logo />
       </a>
-      <h1
-        class="flex justify-center text-sm font-semibold text-gray-900 sm:text-xl"
-      >
-        Astro 🧑‍🚀 Shopify
-      </h1>
-      <div class="justify-self-end">
+      <div class="justify-self-center">
+        <span class="text-black dark:text-gray-400 text-4xl font-stretch-semi-condensed font-bold">Steffen's Sign & Design</span>
+      </div>
+      <div class="justify-self-end flex items-center gap-4">
+        <a href="/events" class="text-gray-700 hover:text-primary-600 transition-colors duration-200 hidden md:block">Events</a>
         <CartIcon client:load />
       </div>
     </nav>
